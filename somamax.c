@@ -5,27 +5,27 @@ int main()
 {
     int n = 0;
     scanf("%d", &n);
-    int val[20];
+    int A[20];
     for(int i = 0; i < n; ++i) {
-        scanf("%d", &val[i]);
+        scanf("%d", &A[i]);
     }
 
-    int maxVectorSum = 0, currentVectorSum = 0, possibleStartIndex, startIndex, endIndex;
+    int SMt = 0, SMi = 0, possibleStartIndex, startIndex, endIndex; 
     for(int i = 0; i < n; ++i) {
-        if(currentVectorSum > 0) {
-            currentVectorSum = val[i] + currentVectorSum;
+        if(SMi >= 0) {
+            SMi = A[i] + SMi;
         } else {
-            currentVectorSum = val[i];
+            SMi = A[i];
             possibleStartIndex = i + 1;
         }
-        if(currentVectorSum > maxVectorSum) {
+        if(SMi > SMt) {
             startIndex = possibleStartIndex;
             endIndex = i + 1;
-            maxVectorSum = currentVectorSum;
+            SMt = SMi;
         }
     }
 
-    printf("Soma: %d\n", maxVectorSum);
+    printf("Soma: %d\n", SMt);
     printf("Indices: %d a %d\n", startIndex, endIndex);
     system("pause");
     return 0;
