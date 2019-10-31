@@ -1,6 +1,9 @@
 # Como utilizar?
+
 make all, para compilar
+
 make clean, para excluir executável
+
 ./main, para executar
 
 # OBS:
