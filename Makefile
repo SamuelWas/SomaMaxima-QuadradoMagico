@@ -1,5 +1,5 @@
-all: somaMaxima.c 
-	gcc -g -Wall -o somaMaxima somaMaxima.c
+all: main.c 
+	gcc -g -Wall -o main main.c
 
 clean: 
-	$(RM) somaMaxima
+	$(RM) main
